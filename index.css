@@ -1,0 +1,273 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+/* Global Variables */
+:root {
+    /* Background */
+    --clr-main-bg: hsl(222, 26%, 31%);
+    --clr-toggle-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    /* keys */
+    --clr-key-bg: hsl(225, 21%, 49%);
+    --clr-key-shadow: hsl(224, 28%, 35%);
+    --clr-red: hsl(6, 63%, 50%);
+    --clr-dark-red: hsl(6, 70%, 34%);
+    --clr-orange-1: hsl(30, 25%, 89%);
+    --clr-orange-2: hsl(28, 16%, 65%);
+    /* text */
+    --clr-blue-1: hsl(221, 14%, 31%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    /* Theme Two */
+    --clr-main-bg-2: hsl(0, 0%, 90%);
+    --clr-toggle-bg-2: hsl(0, 5%, 81%);
+    --screen-bg-2: hsl(0, 0%, 93%);
+    /* keys */
+    --clr-key-bg-2: hsl(185, 42%, 37%);
+    --clr-key-shadow-2: hsl(185, 58%, 25%);
+    --clr-orange-theme-2: hsl(25, 98%, 40%);
+    --clr-orange-theme-2-2: hsl(25, 99%, 27%);
+    --clr-yellow-1: hsl(45, 7%, 89%);
+    --clr-orange-2-theme-2-shadow: hsl(35, 11%, 61%);
+    /* text */
+    --clr-text-theme-2: hsl(60, 10%, 19%);
+
+    /* Theme 3 */
+    --clr-main-bg-3: hsl(268, 75%, 9%);
+    --clr-toggle-bg-3: hsl(285, 91%, 52%);
+    /* keys */
+    --clr-key-bg-3: hsl(281, 89%, 26%);
+    --clr-key-shadow-3: hsl(285, 91%, 52%);
+    --clr-cyan: hsl(176, 100%, 44%);
+    --clr-cyan-2: hsl(177, 92%, 70%);
+    --clr-violet: hsl(268, 47%, 21%);
+    --clr-magenta: hsl(290, 70%, 36%);
+    /* text */
+    --clr-yellow-theme-3: hsl(52, 100%, 62%);
+    /* font */
+    --clr-primary-font: 'League Spartan', sans-serif;
+}
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--clr-primary-font);
+    background-color: var(--clr-main-bg);
+}
+
+li {
+    list-style-type: none;
+}
+
+main {
+    padding: 20px;
+    height: 100vh;
+}
+.container-one {
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.calc {
+    font-size: 32px;
+}
+.theme-selector {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+}
+.theme-selector h6 {
+    padding: 4px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+.select-numbers {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 5px;
+}
+.select-numbers li {
+    font-size: 12px;
+}
+.main-selector {
+    background-color: var(--clr-toggle-bg);
+    padding: 5px;
+    border-radius: 50px;
+}
+.selector-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--clr-red);
+    transition: all 0.2s ease;
+}
+.position-1 {
+    transform: translateX(0px);
+}
+.position-2 {
+    transform: translateX(17px);
+    
+}
+.position-3 {
+    transform: translateX(36px);
+}
+.main-screen {
+    margin-bottom: 25px;
+}
+
+.main-screen input {
+    border: none;
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 40px;
+    outline: none;
+    text-align: right;
+}
+.buttons {
+    padding: 25px;
+    background-color: var(--clr-toggle-bg);
+    border-radius: 10px;
+}
+.cal-buttons {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,60px);
+    gap: 18px 12px;
+}
+.num-btn {
+    font-size: 32px;
+}
+.num-btn span{
+    /* background-color: red; */
+    padding-top: 7px;
+}
+
+.btn {
+    background-color: var(--clr-orange-1);
+    box-shadow: 0 5px 0 var(--clr-orange-2);
+    color: var(--clr-blue-1);
+    font-family: var(--clr-primary-font);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+.del {
+    font-size: 20px;
+    color: var(--clr-white);
+    background-color: var(--clr-key-bg);
+    box-shadow: 0 5px 0 var(--clr-key-shadow);
+}
+.reset,del {
+    font-size: 22px;
+    color: var(--clr-white);
+    background-color: var(--clr-key-bg);
+    box-shadow: 0 5px 0 var(--clr-key-shadow);
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.calculate {
+    font-size: 22px;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    color: var(--clr-white);
+    box-shadow: 0 5px 0 var(--clr-dark-red);
+    background-color: var(--clr-red);
+}
+
+
+.display-1 {
+    background-color: var(--screen-bg);
+    color: var(--clr-white);
+}
+
+/* Theme 2 */
+.calc-bg {
+    background-color: var(--clr-main-bg-2);
+}
+.calc-2 {
+    color: var(--clr-text-theme-2);
+}
+/* screen */
+.display-2 {
+    background-color: #eeeeee;
+    color: var(--clr-text-theme-2);
+}
+.selector-color {
+    background-color: var(--clr-orange-theme-2);
+}
+.selector-2 {
+    background-color: #d3cdcd;
+}
+.keycontainer-2 {
+    background-color: #d3cdcd;
+}
+.keys {
+    background-color: var(--clr-yellow-1);
+    box-shadow: 0 5px 0 var(--clr-orange-2-theme-2-shadow);
+    color: var(--clr-text-theme-2);
+}
+.theme-2-buttons {
+    background-color: var(--clr-key-bg-2);
+    box-shadow: 0 5px 0 var(--clr-key-shadow-2);
+    color: var(--clr-white);
+}
+
+.calculate-2 {
+    background-color: var(--clr-orange-theme-2);
+    box-shadow: 0 5px 0 var(--clr-orange-theme-2-2);
+    color: var(--clr-white);
+}
+
+/* Theme 3 */
+.calc-bg-3 {
+    background-color: var(--clr-main-bg-3);
+}
+.calc-3 {
+    color: var(--clr-yellow-theme-3);
+}
+.display-3 {
+    background-color: #1e0836;
+    color: var(--clr-yellow-theme-3);
+}
+.selector-3 {
+    background-color: #1e0836;
+}
+.keycontainer-3 {
+     background-color: #1e0836;
+}
+.keys-3 {
+    background-color: #321c4d;
+    box-shadow: 0 5px 0 var(--clr-magenta);
+    color: var(--clr-yellow-theme-3);
+}
+
+.theme-3-buttons {
+    background-color: #56077c;
+    box-shadow: 0 5px 0 var(--clr-key-shadow-3);
+    color: var(--clr-white);
+}
+
+.calculate-3 {
+    background-color: var(--clr-cyan);
+    box-shadow: 0 5px 0 var(--clr-cyan-2);
+    color: black;
+}
+.selector-color-3 {
+    background-color: var(--clr-cyan);
+}
